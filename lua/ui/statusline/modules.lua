@@ -126,11 +126,13 @@ M.cursor_position = function()
    local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
 
    local current_line = fn.line "."
+   local current_column = fn.col "."
    local total_line = fn.line "$"
-   local text = math.modf((current_line / total_line) * 100) .. tostring "%%"
+   -- local text = math.modf((current_line / total_line) * 100) .. tostring "%%"
+   local text = current_column .. ":" .. current_line .. " " .. math.modf((current_line / total_line) * 100) .. tostring "%%"
 
-   text = (current_line == 1 and "Top") or text
-   text = (current_line == total_line and "Bot") or text
+   -- text = (current_line == 1 and "Top") or text
+   -- text = (current_line == total_line and "Bot") or text
 
    return left_sep .. "%#St_pos_text#" .. " " .. text .. " "
 end
