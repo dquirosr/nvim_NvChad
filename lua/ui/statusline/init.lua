@@ -14,7 +14,7 @@ return {
          "%=",
 
          modules.LSP_Diagnostics(),
-         -- modules.LSP_status() or "",
+         modules.LSP_status() or "",
          modules.cwd(),
          modules.cursor_position(),
       }

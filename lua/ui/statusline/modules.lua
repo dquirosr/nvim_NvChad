@@ -122,6 +122,12 @@ M.cwd = function()
    return (vim.o.columns > 120 and ("%#St_cwd_sep#" .. sep_l .. dir_icon .. dir_name)) or ""
 end
 
+-- M.statusKite = function ()
+--   local stK = "%{kite#statusline()}"
+--   return (stK)
+-- end
+
+
 M.cursor_position = function()
    local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
 
